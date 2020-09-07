@@ -1,14 +1,14 @@
 package pl.javastart.beans.decorators;
 
-import org.springframework.context.annotation.Primary;
+
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
+@Decorator(type = Decorator.DecoratorType.UPPER)
 public class UpperCaseMessageDecorator implements MessageDecorator {
 
     @Override
-    public String decorate(String msg) {
+    public String decorate(@Decorator(type = Decorator.DecoratorType.UPPER)String msg) {
         return msg.toUpperCase();
     }
 }

@@ -15,7 +15,7 @@ public class SpringDiApplication{
                 new AnnotationConfigApplicationContext(SpringDiApplication.class);
         MessagePrinter printer = ctx.getBean(MessagePrinter.class);
         printer.print();
-        
+
 
 
 
