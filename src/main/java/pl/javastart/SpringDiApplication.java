@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import pl.javastart.beans.printers.MessagePrinter;
+import pl.javastart.beans.printers.TestMessagePrinter;
 
 @Configuration
 @ComponentScan
@@ -15,6 +16,8 @@ public class SpringDiApplication{
                 new AnnotationConfigApplicationContext(SpringDiApplication.class);
         MessagePrinter printer = ctx.getBean(MessagePrinter.class);
         printer.print();
+        TestMessagePrinter testMessagePrinter = ctx.getBean(TestMessagePrinter.class);
+        testMessagePrinter.print();
 
 
 

@@ -21,6 +21,6 @@ public @interface Producer {
     ProducerType type();
 
     public enum ProducerType{
-        SIMPLE, FILE;
+        SIMPLE, FILE, TEST;
     }
 }
