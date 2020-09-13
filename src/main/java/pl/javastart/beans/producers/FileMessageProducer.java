@@ -15,12 +15,13 @@ import org.springframework.stereotype.Component;
 public class FileMessageProducer implements MessageProducer {
 
     @Value("${messageFileProperty}")
+    private String fileName;
 
     @Override
     public String getMessage() {
         List<String> lines = null;
         try {
-            Path path = new File(getClass().getResource("/message.txt").toURI()).toPath();
+            Path path = new File(getClass().getResource(fileName).toURI()).toPath();
             lines = Files.readAllLines(path);
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();

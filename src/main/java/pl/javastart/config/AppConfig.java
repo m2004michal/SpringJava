@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import java.util.Random;
 
@@ -12,9 +13,9 @@ import java.util.Random;
 public class AppConfig {
 
     @Bean
-    @Qualifier("messageFile")
-    public String configFileName(){
-        return "/message.txt";
+    public static PropertySourcesPlaceholderConfigurer
+    getPropertySourcesPlaceholderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
     }
 
     @Bean
