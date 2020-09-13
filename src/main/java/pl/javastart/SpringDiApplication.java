@@ -19,9 +19,8 @@ public class SpringDiApplication{
         TestMessagePrinter testMessagePrinter = ctx.getBean(TestMessagePrinter.class);
         testMessagePrinter.print();
 
-
-
-
         ctx.close();
+
     }
+
 }
