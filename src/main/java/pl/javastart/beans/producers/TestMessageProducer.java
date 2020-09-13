@@ -3,7 +3,7 @@ package pl.javastart.beans.producers;
 import org.springframework.stereotype.Component;
 
 @Component
-@Producer(type = Producer.ProducerType.TEST)
+@Message(type = Message.MessageType.TEST)
 public class TestMessageProducer implements MessageProducer {
 
     @Override

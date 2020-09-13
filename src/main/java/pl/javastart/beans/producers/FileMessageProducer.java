@@ -7,11 +7,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-@Producer(type = Producer.ProducerType.FILE)
+@Message(type = Message.MessageType.FILE)
 public class FileMessageProducer implements MessageProducer {
+
+    @Value("${messageFileProperty}")
 
     @Override
     public String getMessage() {
